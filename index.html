@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torque & Tread Tire Co.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Torque and Tread home">
+        <span class="brand-mark">T&T</span>
+        <span>
+          <strong>Torque & Tread</strong>
+          <small>Tires, wheels, service</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#shop">Shop</a>
+        <a href="#services">Services</a>
+        <a href="#fitment">Fitment</a>
+        <a href="#support">Support</a>
+      </nav>
+      <button class="cart-button" id="openCart" type="button" aria-label="Open cart">
+        <span>Cart</span>
+        <strong id="cartCount">0</strong>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/hero-tire-shop.png" alt="Performance tires displayed in a tire shop" />
+        <div class="hero-content">
+          <p class="eyebrow">Same-day installation in select zip codes</p>
+          <h1 id="hero-title">Torque & Tread Tire Co.</h1>
+          <p>
+            Shop performance, all-season, and all-terrain tires with clear fitment tools,
+            upfront service pricing, and local appointment booking.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#shop">Shop tires</a>
+            <a class="button ghost" href="#services">Book service</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="fitment-panel" id="fitment" aria-labelledby="fitment-title">
+        <div>
+          <p class="eyebrow">Find your size</p>
+          <h2 id="fitment-title">Tire fitment lookup</h2>
+        </div>
+        <form class="fitment-form" id="fitmentForm">
+          <label>
+            Width
+            <select name="width">
+              <option>205</option>
+              <option>215</option>
+              <option selected>225</option>
+              <option>245</option>
+              <option>265</option>
+            </select>
+          </label>
+          <label>
+            Ratio
+            <select name="ratio">
+              <option>45</option>
+              <option selected>55</option>
+              <option>60</option>
+              <option>65</option>
+              <option>70</option>
+            </select>
+          </label>
+          <label>
+            Rim
+            <select name="rim">
+              <option>16</option>
+              <option selected>17</option>
+              <option>18</option>
+              <option>20</option>
+            </select>
+          </label>
+          <button class="button dark" type="submit">Match tires</button>
+        </form>
+      </section>
+
+      <section class="section-shell" id="shop" aria-labelledby="shop-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Inventory</p>
+            <h2 id="shop-title">Shop popular tires</h2>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filter tire products">
+            <button class="chip active" type="button" data-filter="all">All</button>
+            <button class="chip" type="button" data-filter="all-season">All-season</button>
+            <button class="chip" type="button" data-filter="performance">Performance</button>
+            <button class="chip" type="button" data-filter="all-terrain">All-terrain</button>
+          </div>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="service-band" id="services" aria-labelledby="services-title">
+        <div class="service-copy">
+          <p class="eyebrow">Service bay</p>
+          <h2 id="services-title">Install, balance, align, and rotate</h2>
+          <p>
+            Pick a service package and choose a preferred time. Your order summary
+            keeps tire and service costs together before checkout.
+          </p>
+        </div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </section>
+
+      <section class="checkout-preview" aria-labelledby="checkout-title">
+        <div>
+          <p class="eyebrow">Checkout ready</p>
+          <h2 id="checkout-title">Built for online orders and local pickup</h2>
+          <p>
+            Customers can compare tires, add installation, reserve an appointment, and review
+            estimated totals before paying.
+          </p>
+        </div>
+        <form class="appointment-form">
+          <label>
+            Preferred day
+            <input type="date" />
+          </label>
+          <label>
+            Vehicle
+            <input type="text" placeholder="2022 Honda Accord" />
+          </label>
+          <label>
+            Contact
+            <input type="email" placeholder="driver@example.com" />
+          </label>
+          <button class="button primary" type="button">Reserve appointment</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="support">
+      <div>
+        <strong>Torque & Tread Tire Co.</strong>
+        <p>Open Mon-Sat, 8 AM-7 PM. Road hazard coverage available on every new tire set.</p>
+      </div>
+      <a href="tel:+15550197000">(555) 019-7000</a>
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
+      <div class="cart-panel" role="dialog" aria-modal="true">
+        <div class="cart-head">
+          <h2 id="cartTitle">Your order</h2>
+          <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total">
+          <span>Estimated total</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <button class="button primary full" type="button">Continue to checkout</button>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>
