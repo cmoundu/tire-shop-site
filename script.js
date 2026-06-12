@@ -44,7 +44,7 @@ const products = [
 const services = [
   {
     id: "install",
-    name: "Mount & Balance",
+    name: "Tire Mount & Balance",
     detail: "Professional install with new valve stems, road-force balance, and final pressure check.",
     price: 89,
   },
